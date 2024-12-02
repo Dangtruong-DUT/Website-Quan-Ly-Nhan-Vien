@@ -1,0 +1,13 @@
+.desc {
+
+}
+.form-container {
+    margin: 10rem auto;
+    background-color: rgb(255, 255, 255);
+    max-width: 400px;
+    padding: 2rem;
+    border: 1px solid var(--border-color);
+}
+.form-container h2 {
+    text-align: center;
+}
