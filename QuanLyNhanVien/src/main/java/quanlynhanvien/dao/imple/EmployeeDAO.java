@@ -76,4 +76,12 @@ public class EmployeeDAO extends AbstractDAO<Employee>  implements IEmployeeDAO 
 		String sql = "SELECT count(*) FROM nhanvien WHERE idpb = ?";
 		return count(sql, idpb);
 	}
+
+	@Override
+	public boolean updateInfoEmployee(String idNV, String diaChi, String soDienThoai) {
+		String sql = "UPDATE employee SET diaChi = ? AND soDienThoai = ? WHERE idNV = ?";
+		int rowChange = executeUpdate(sql, diaChi, soDienThoai);
+		return rowChange > 0 ? true : false;
+	}
+	
 }

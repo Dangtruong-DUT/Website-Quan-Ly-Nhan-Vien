@@ -14,4 +14,5 @@ public interface IEmployeeDAO extends IGenericDAO<Employee> {
 	int insert(Employee employee);
 	public int getTotalItem() ;
 	public int getTotalEmployeeByIDPB(String idpb);
+	public boolean updateInfoEmployee(String idNV, String diaChi, String soDienThoai);
 }

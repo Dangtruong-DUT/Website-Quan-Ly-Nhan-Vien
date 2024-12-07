@@ -21,5 +21,6 @@ public interface IEmployeeService {
     int deleteEmployees(String[] ids);
 	public int getTotalEmployee();
 	public int getTotalEmployeewithIPB(String idpb);
-	
+
+    public boolean updateInfoEmployee(String idNV, String diaChi, String soDienThoai);
 }

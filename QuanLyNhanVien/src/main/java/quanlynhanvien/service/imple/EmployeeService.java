@@ -65,4 +65,9 @@ public class EmployeeService implements IEmployeeService {
 	public int getTotalEmployeewithIPB(String idpb) {
 		return dao.getTotalEmployeeByIDPB(idpb);
 	}
+
+	@Override
+	public boolean updateInfoEmployee(String idNV, String diaChi, String soDienThoai) {
+		return dao.updateInfoEmployee(idNV, diaChi, soDienThoai);
+	}
 }
