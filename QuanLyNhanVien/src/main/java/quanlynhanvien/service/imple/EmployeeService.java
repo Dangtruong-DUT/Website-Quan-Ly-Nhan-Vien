@@ -65,6 +65,4 @@ public class EmployeeService implements IEmployeeService {
 	public int getTotalEmployeewithIPB(String idpb) {
 		return dao.getTotalEmployeeByIDPB(idpb);
 	}
-
-
 }

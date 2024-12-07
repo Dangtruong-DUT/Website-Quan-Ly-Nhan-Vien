@@ -3,6 +3,7 @@ package quanlynhanvien.bean;
 public class Account  extends AbstractBean<Account> {
 	private String userName;
 	private String passWord;
+	private String idNV;
 	private Role role = new Role();
 	
 	public String getUserName() {
@@ -23,5 +24,11 @@ public class Account  extends AbstractBean<Account> {
 	}
 	public void setRole(Role role) {
 		this.role = role;
+	}
+	public String getIdNV() {
+		return idNV;
+	}
+	public void setIdNV(String idNV) {
+		this.idNV = idNV;
 	}
 }

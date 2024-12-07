@@ -1,0 +1,5 @@
+3 role admin user guest
+giới thiệu 1 khoa mình 
+khoa có nhiều phòng ban
+3 bảng account user phòng ban
+admin quan li phong ban, quan li User, quan li account

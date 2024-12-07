@@ -3,6 +3,7 @@ package quanlynhanvien.dao;
 import java.util.ArrayList;
 
 import quanlynhanvien.Mapper.IRowMapper;
+import quanlynhanvien.bean.Account;
 
 /*
  * Noi chua cac ham chung nhat lam viec 
