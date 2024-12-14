@@ -95,6 +95,9 @@
 .actions__link--delete {
     background-color: #a82016e8;
 }
+.actions__link--info {
+    background-color: rgb(0, 128, 192);
+}
 
 .actions__link:hover {
     opacity: 0.9;

@@ -7,7 +7,7 @@
 <title>Tìm Kiếm Nhân Viên</title>
 </head>
 <body>
-	<form action="admin-Employee" method="post">
+	<form action="admin-user" method="post">
 		<div class="search__container">
 	        <div class="search__title">Tìm Kiếm Nhân Viên</div>
 	        <div class="search__group-item">
@@ -16,7 +16,7 @@
 	                <label for="idnv" class="search__item-label">IDNV</label>
 	            </div>
 	            <div class="search__selectBox-item">
-	                <input id="hoten" type="radio" value="hoten" name="key">
+	                <input id="hoten" type="radio" value="tenNV" name="key">
 	                <label for="hoten" class="search__item-label">HoTen</label>
 	            </div>
 	            <div class="search__selectBox-item">

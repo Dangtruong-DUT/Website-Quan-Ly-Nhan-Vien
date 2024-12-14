@@ -2,7 +2,7 @@
 	xmlns="http://java.sun.com/xml/ns/javaee"
 	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
 	version="3.0">
-	<display-name>Quan Ly Nhan Vien</display-name>
+	<display-name>Bach Khoa Da Nang</display-name>
 
 	<listener>
 		<listener-class>org.jboss.weld.environment.servlet.Listener</listener-class>
@@ -17,7 +17,7 @@
 	</filter-mapping>
 	<filter>
 		<filter-name>servletFilter</filter-name>
-		<filter-class>quanlynhanvien.filter.AuthorizationFilter</filter-class>
+		<filter-class>BachKhoaDaNang.filter.AuthorizationFilter</filter-class>
 	</filter>
 	<filter-mapping>
 		<filter-name>servletFilter</filter-name>

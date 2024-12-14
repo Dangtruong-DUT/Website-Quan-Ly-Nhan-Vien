@@ -44,7 +44,7 @@
 	                rules: [
 	                    Validator.isRequired('#username'),
 	                    Validator.isRequired('#password'),
-	                    Validator.minLegth('#password',6),
+	                    Validator.minLegth('#password',5),
 	                ],
 	            })
         </script>

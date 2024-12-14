@@ -5,11 +5,10 @@
 <!DOCTYPE html>
 <div class="table-container">
 			<div class="group-btn">
-				<a href="admin-Employee?type=edit" class="btn--primary btn min-font-size">Thêm</a>
 				<button id="btnDeleteALL" type="button" class="btn--primary btn min-font-size">Xóa Tất cả</button>
 			</div>
             <h1 class="table-container__title">Danh Sách Nhân Viên</h1>
-            <form action="admin-Employee" id="formListEmployee" method="get">
+            <form action="admin-user" id="formListEmployee" method="get">
 				<table class="table">
 	                <thead class="table__head">
 	                    <tr >
@@ -18,7 +17,9 @@
 	                        <th class="table__cell table__cell--header">Name</th>
 	                        <th class="table__cell table__cell--header">IDPB</th>
 	                        <th class="table__cell table__cell--header">Address</th>
-	                        <th class="table__cell table__cell--header">Actions</th>
+	                        <th class="table__cell table__cell--header">Phone Number</th>
+	                        <th class="table__cell table__cell--header">date of birth</th>
+	                         <th class="table__cell table__cell--header">Actions</th>
 	                    </tr>
 	                </thead>
 	                <tbody class="table__body">
@@ -31,22 +32,29 @@
 						    <c:otherwise>
 						        <c:forEach var="item" items="${model.listResult}">
 						            <tr class="table__row">
-						                <td><input type="checkbox" id="checkbox_${item.idnv}" value="${item.idnv}"></td>
+						            	<td><input type="checkbox" id="checkbox_${item.idnv}" value="${item.idnv}"></td>
 						                <td class="table__cell">${item.idnv}</td>
 						                <td class="table__cell">${item.hoten}</td>
 						                <td class="table__cell">${item.idpb}</td>
 						                <td class="table__cell">${item.diachi}</td>
+						                <td class="table__cell">${item.soDienThoai}</td>
+						                <td class="table__cell">${item.ngaySinh}</td>
 						                <td class="table__cell">
-						                	<c:url var="editURL" value="admin-Employee">
+						                	<c:url var="editURL" value="admin-user">
 						                		<c:param name="type" value="edit"/>
 						                		<c:param name="idnv" value="${item.idnv}"/>
 						                	</c:url>
-						                	<c:url var="deleteURL" value="admin-Employee">
+						                	<c:url var="deleteURL" value="admin-user">
 						                		<c:param name="type" value="delete"/>
 						                		<c:param name="idnv" value="${item.idnv}"/>
 						                	</c:url>
+						                	<c:url var="accountURL" value="admin-account">
+						                		<c:param name="type" value="list"/>
+						                		<c:param name="idNV" value="${item.idnv}"/>
+						                	</c:url>
 						                
 						                    <a href="${editURL}" class="actions__link actions__link--edit">Edit</a>
+						                    <a href="${accountURL}" class="actions__link actions__link--info">Account</a>
 						                    <button value="${item.idnv}" class=" btnDelete actions__link actions__link--delete">Delete</button>
 						                </td>
 						            </tr>
@@ -66,8 +74,8 @@
         </div>
         <!-- /.main-content -->
 		<script>
-		   const APIurl = "api-admin-employee";
-		   const EmployeeURL = "admin-Employee";
+		   const APIurl = "api-admin-user";
+		   const EmployeeURL = "admin-user";
 		   let totalPages = ${model.totalPage};
 		   let currentPage = ${model.page};
 		   let limit = 10;

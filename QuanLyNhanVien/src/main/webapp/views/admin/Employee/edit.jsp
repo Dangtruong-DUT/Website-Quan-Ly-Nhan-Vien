@@ -16,12 +16,14 @@
                     <div class="spacer"></div>
 
                     <div class="form-group">
-                        <lable class="form-lable" for='idnv'>IDNV<span class="required">*</span></lable>
+                        <label class="form-lable" for='idnv'>IDNV<span class="required">*</span></label>
                         <input type="text" name ='idnv' id="idnv" placeholder="nhap idnv" class ='form-control' value="${model.idnv}" ${model.idnv!=null?"readonly":"" }>
                         <span class="form-message"></span>
                     </div>
+                    
+                    
                     <div class="form-group">
-                        <lable class="form-lable" for ='hoten'>Họ và tên<span class="required">*</span></lable>
+                        <label class="form-lable" for ='hoten'>Họ và tên<span class="required">*</span></label>
                         <input type="text"id= 'hoten' name = 'hoten' placeholder="ho va ten nhan vien" class ='form-control' value="${model.hoten}">
                         <span class="form-message" ></span>
                     </div>
@@ -38,9 +40,19 @@
 					    <span class="form-message"></span>
 					</div>
                     <div class="form-group">
-                        <lable class="form-lable" for ='diachi'>Địa chỉ<span class="required">*</span></lable>
+                        <label class="form-lable" for ='diachi'>Địa chỉ<span class="required">*</span></label>
                         <input type="text"id= 'diachi' name = 'diachi' placeholder="nhap dia chi nhan vien" class ='form-control' value="${model.diachi}">
                         <span class="form-message" ></span>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-lable" for='sdt'>Số điện thoại<span class="required">*</span></label>
+                        <input type="text" name ='soDienThoai' id="std" placeholder="VD: 0375656647" class ='form-control' value="${model.soDienThoai}">
+                        <span class="form-message"></span>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-lable" for='ngaysinh'>Ngày sinh<span class="required">*</span></label>
+                        <input type="date" name ='ngaySinh' id="ngaysinh" class ='form-control' value="${model.ngaySinh}" >
+                        <span class="form-message"></span>
                     </div>
                     <span id="invalidMessage" class=" required form-message" ></span>
                     <hr/>
@@ -50,8 +62,9 @@
                 </form>
             </div>
             <script>
-			    const EmployeeURL = "admin-Employee";
-			    const APIurl = "api-admin-employee";
+			    const EmployeeURL = "admin-user";
+			    const APIurl = "api-admin-user";
+			    const APIaddAccountURL = "admin-account"
 			
 			    Validator({
 			        form: '#form-editEm',
@@ -88,8 +101,14 @@
 			            });
 			
 			            if (response.ok) {
-			                alert("Thêm thành công!");
-			                window.location.href = `${EmployeeURL}?type=list&maxPageItem=10&page=1`;
+			            	const result = await response.json(); 
+			            	console.log(result)
+			                if (result) {
+				                alert("Thêm thành công!");
+				               	window.location.href = APIaddAccountURL+"?type=edit&idNV="+data.idnv;
+			                } else {
+			                	document.querySelector("#invalidMessage").innerText = "Thêm nhân viên thất bại!";
+			                }
 			            } else {
 			                document.querySelector("#invalidMessage").innerText = "Thêm nhân viên thất bại!";
 			            }
@@ -110,8 +129,13 @@
 			            });
 			
 			            if (response.ok) {
-			                alert("Thay đổi thông tin thành công!");
-			                window.location.href = `${EmployeeURL}?type=list&maxPageItem=10&page=1`;
+			            	const result = await response.json(); 
+			                if (result) {
+				                alert("Thay đổi thông tin thành công!");
+				                window.location.href = `${EmployeeURL}?type=list&maxPageItem=10&page=1`;
+			                } else {
+			                	 document.querySelector("#invalidMessage").innerText = "Cập nhật nhân viên thất bại!";
+				            }
 			            } else {
 			                document.querySelector("#invalidMessage").innerText = "Cập nhật nhân viên thất bại!";
 			            }

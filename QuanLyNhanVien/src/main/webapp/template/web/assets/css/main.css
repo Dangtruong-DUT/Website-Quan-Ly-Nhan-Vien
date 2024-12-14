@@ -93,6 +93,13 @@ img.flag-vienammsese {
     display: block;
 }
 /*form4 trang thông tin*/
+.media {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: start;
+    align-items: flex-start;
+    flex-direction: column !important;
+}
 .container-informationPage {
     margin-top: 2rem;
 }
@@ -108,16 +115,21 @@ img.flag-vienammsese {
     min-width: 700px;
 }
 ul.material__list {
+    display: flex;
     list-style: none;
-
+    justify-content: center;
+    flex-direction: column;
+    align-content: flex-start;
+    align-items: flex-start;
 }
+
 li.material__news {
+	width: 100%;
     padding: 1.5rem 0;
     border-bottom: 1px solid var(--border-color);
 }
 .news-container {
     display: flex;
-    justify-self: center;
     align-items: center;
 }
 .news__IMG-information {
