@@ -9,7 +9,6 @@
 				<table class="table">
 	                <thead class="table__head">
 	                    <tr >
-	                    	<th><input type="checkbox" id="checkAll"></th>
 	                        <th class="table__cell table__cell--header">#id</th>
 	                        <th class="table__cell table__cell--header">Name</th>
 	                        <th class="table__cell table__cell--header">IDPB</th>

@@ -40,7 +40,7 @@
                     </div> 
                     <div class="form-group">
                         <label class="form-lable">Role<span class="required">*</span></label>
-					    <select name="role" id="role" class="form-control">
+					    <select name="role" id="role" class="form-control" <c:if test="${model.role =='ADMIN'}">disabled</c:if>>
 					        <option value="">---Chọn Role---</option>
 				            <option value="USER" <c:if test="${model.role =='USER'}">selected</c:if>>
 				                USER
@@ -54,7 +54,9 @@
                      <span id="invalidMessage" class=" required form-message" ></span>
                     <input type ="submit" class="form-submit btn btn--normal" value ='Submit'>
 					<input type="hidden" value="${model.userName}" id="userNamehidden"/>
-
+					<c:if test="${model.role =='ADMIN'}">
+						<input type="hidden" value="${model.role }" name="role"/>
+					</c:if>
                 </form>
             </div>
             

@@ -13,7 +13,7 @@ public class AccountDAO extends AbstractDAO<Account> implements IAccountDAO {
 	public Account findByUsernameAndPassowrd(String username, String password) {
 		String sql = "SELECT * FROM account WHERE username = ? AND password = ?";
 		ArrayList<Account> account = query(sql, new AccountMapper(), username, password);
-		return account==null ? null : account.get(0);
+		return ((account==null) || account.isEmpty())? null : account.get(0);
 	}
 	
 	@Override

@@ -49,7 +49,6 @@ public class HomeController extends HttpServlet {
 			 Account account =FormUtil.toModel(Account.class, req);
 			 // authentication
 			 account = accountService.findAccountByUserNameAndPassword(account.getUserName(),account.getPassWord());
-			 System.out.println(account.getRole());
 			 if (account!= null) {
 				 User model = userService.getEmployeeDetail(account.getIdNV());
 				 // Authorization + session (put value and remove value, get value)

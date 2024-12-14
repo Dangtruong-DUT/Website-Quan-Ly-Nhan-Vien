@@ -15,14 +15,17 @@ import BachKhoaDaNang.bean.User;
 import BachKhoaDaNang.constant.SystemConstant;
 import BachKhoaDaNang.paging.IPageble;
 import BachKhoaDaNang.paging.imple.PageRequest;
+import BachKhoaDaNang.service.IDepartmentService;
 import BachKhoaDaNang.service.IUserService;
 import BachKhoaDaNang.sorter.Sorter;
 import BachKhoaDaNang.utils.FormUtil;
 
-@WebServlet(urlPatterns = {"/user","/user-account"})
+@WebServlet(urlPatterns = {"/user"})
 public class UserController extends HttpServlet {
 	@Inject 
 	private IUserService employeeService;
+	@Inject
+	private IDepartmentService departmentService;
 
 	private static final long serialVersionUID = 1L;
 	@Override
@@ -57,7 +60,14 @@ public class UserController extends HttpServlet {
 				// response edit or insert
 		 }  else if (model.getType().equals(SystemConstant.SEARCH)) {
 				view = "/views/user/Employee/search.jsp";	
-		}
+		 }  else if (model.getType().equals(SystemConstant.EDIT)) {
+			 if (model.getIdnv()!=null) {
+				 model = employeeService.getEmployeeDetail(model.getIdnv());
+				}
+				req.setAttribute("departments", departmentService.getAllDepartment());
+				view = "/views/user/Employee/edit.jsp";
+			
+		 }
 		 req.setAttribute(SystemConstant.MODEL, model);
 		 RequestDispatcher rd = req.getRequestDispatcher(view);
 		 rd.forward(req, resp);
