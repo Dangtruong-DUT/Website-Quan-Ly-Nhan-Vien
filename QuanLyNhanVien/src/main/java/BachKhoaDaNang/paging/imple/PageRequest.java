@@ -10,7 +10,7 @@ public class PageRequest implements IPageble{
 	private String key;
 	private String value;
 	
-	public PageRequest(Integer page,Integer maxPageItem, Sorter sorter) {
+	public PageRequest(Integer page ,Integer maxPageItem, Sorter sorter) {
 		this.page = page;
 		this.maxPageItem = maxPageItem;
 		this.setSorter(sorter);

@@ -34,11 +34,11 @@ public class HomeController extends HttpServlet {
 			RequestDispatcher rd = req.getRequestDispatcher("/views/login.jsp");
 			rd.forward(req, resp);
 		} else if (action !=null && action.equals("logout")){
-			SessionUtil.getInstance().removeValue(req, "USERMODEL");
+			SessionUtil.getInstance().removeValue(req, SystemConstant.USERMODEL);
+			 SessionUtil.getInstance().removeValue(req,  SystemConstant.USERACCOUNT);
 			resp.sendRedirect(req.getContextPath()+"/trang-chu");
 		} else {
-			RequestDispatcher rd = req.getRequestDispatcher("/views/web/news/pageNews.jsp");
-			rd.forward(req, resp);
+			 resp.sendRedirect("news?type=list&categoryId=tintuc&page=1&maxPageItem=10");
 		}
 	}
 	

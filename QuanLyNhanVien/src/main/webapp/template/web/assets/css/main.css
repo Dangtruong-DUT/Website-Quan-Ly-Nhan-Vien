@@ -392,3 +392,6 @@ ul.footer__list {
         flex-direction: column;
     }
 }
+.media__date-value {
+	margin-left: 2px;
+}

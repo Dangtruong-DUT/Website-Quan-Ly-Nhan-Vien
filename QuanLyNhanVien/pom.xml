@@ -16,8 +16,8 @@
 		<weld.servlet.version>1.1.0.Final</weld.servlet.version>
 		<maven.compiler.source>1.8</maven.compiler.source>
 		<maven.compiler.target>1.8</maven.compiler.target>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -53,7 +53,8 @@
 		</dependency>
 		<!--
 			sử dụng để có thể gọi hàm đã được
-		 	implement thông qua interface giúp có thể chia nhiều class mỗi class chỉ 1 nhiệm vụ
+		 	implement thông qua interface giúp có thể chia nhiều class mỗi class chỉ 1
+		nhiệm vụ
 		 	theo như design partten Single Responsibility Principle
 		  	và Dependency Inversion Principle (DIP),
 		  	chứa beans.xml có tác dụng quản lý đổi tượng cho dependency
@@ -104,7 +105,13 @@
 			<artifactId>commons-lang</artifactId>
 			<version>2.6</version>
 		</dependency>
-		
+
+		<dependency>
+			<groupId>commons-fileupload</groupId>
+			<artifactId>commons-fileupload</artifactId>
+			<version>1.4</version>
+		</dependency>
+
 	</dependencies>
 	<build>
 		<plugins>

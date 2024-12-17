@@ -79,6 +79,8 @@ public class AbstractDAO<T> implements IGenericDAO<T>{
 	                statement.setTimestamp(index, (Timestamp) parameter);
 	            } else if (parameter instanceof Date) {
 	                statement.setDate(index, new java.sql.Date(((Date) parameter).getTime()));
+	            } else if (parameter instanceof byte[]) {
+	                statement.setBytes(index, (byte[])parameter);
 	            }
 	        }
 	    } catch (SQLException e) {

@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="<c:url value= '/template/web/assets/css/main.css'/>">
     <link rel="stylesheet" href="<c:url value= '/template/web/assets/css/form1.css' />">
     <link rel="stylesheet" href="<c:url value= '/template/web/assets/css/table1.css' />">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     
 	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js"></script>
